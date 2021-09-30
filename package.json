@@ -1,11 +1,11 @@
 {
-  "name": "aria2_heroku_sht_public",
+  "name": "sht",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xhghs/aria2_heroku_sht_public.git"
+    "url": "git+github.com/a132395/sht.git"
   },
   "author": "",
   "license": "ISC",
