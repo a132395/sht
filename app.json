@@ -1,12 +1,12 @@
 {
-	"name": "Heroku Aria SHT",
+	"name": "SHT",
 	"addons": [
 		{
 		  "plan": "heroku-postgresql:hobby-dev"
 		}
 	],
 	"description": "Run aria and fetch sht",
-	"repository": "https://github.com/a132395/aria2_heroku_sht_public",
+	"repository": "github.com/a132395/sht",
 	"keywords": ["AriaNG"],
 	"env": {
 		"HEROKU_APP_NAME": {
@@ -27,7 +27,7 @@
 			"value": "google:tmp"
 		},
         "SHTLINK":{
-            "description": "色华堂域名，如果默认值可以访问可以不用更改, default: https://www.sehuatang.org/",
+            "description": "改, default: /",
             "required": false,
             "value": "https://www.sehuatang.org/"
 		},
