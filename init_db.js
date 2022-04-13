@@ -64,8 +64,11 @@ async function main(){
     
     console.log('test1...');
     let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
+    console.log('test3...');
     const html = respone.body;
+    console.log('test4...');
     const $ = cheerio.load(html);
+    console.log('test5...');
     // console.log($("tbody[id^='normalthread']").length);
     const lastPageHref = $("div.pg > a.last").attr('href');
     console.log('test2...');
