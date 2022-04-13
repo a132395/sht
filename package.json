@@ -14,7 +14,7 @@
     "bluebird": "^3.7.2",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
-    "got": "latest",
+    "got": "^11.1.2",
     "http-proxy": "^1.18.0",
     "human-interval": "^1.0.0",
     "pg": "latest",
