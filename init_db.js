@@ -21,7 +21,7 @@ const keepAliveHttpsAgent = new HttpsAgent({
 });
 
 const cookieJar = new CookieJar();
-const SHTBASE = process.env.SHTLINK || "https://www.sehuatang.org/";
+const SHTBASE = "https://sehuatang.net/";
 const gotInstance = got.extend({
     agent:{
         http: keepAliveHttpAgent,
