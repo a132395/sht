@@ -63,14 +63,9 @@ async function main(){
     console.log('now2...');
     
     console.log('test1...');
-    let respone =  gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
-    console.log('test2...');
-    console.log(respone);
-    console.log('test3...');
+    const respone =  gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
     const html = respone.body;
-    console.log(html);
     const $ = cheerio.load(html);
-    console.log('test5...');
     // console.log($("tbody[id^='normalthread']").length);
     const lastPageHref = $("div.pg > a.last").attr('href');
     console.log('test2...');
