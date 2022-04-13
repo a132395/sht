@@ -63,7 +63,7 @@ async function main(){
     console.log('now2...');
     
     console.log('test1...');
-    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
+    let respone =  gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
     console.log('test3...');
     const html = respone.body;
     console.log('test4...');
