@@ -54,11 +54,13 @@ async function main(){
         postdate DATE NOT NULL,
         downloaded BOOLEAN
     )`);
+    console.log('now1...');
 
     await client.query(`CREATE TABLE IF NOT EXISTS downloading(
         id SERIAL PRIMARY KEY,
         url VARCHAR(10000) REFERENCES posts(url)
     );`);
+    console.log('now2...');
     
     console.log('test1...');
     let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
