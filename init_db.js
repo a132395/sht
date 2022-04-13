@@ -40,7 +40,12 @@ async function main(){
     // Init db, 
     try{
         client.connect();
-        console.log("Initializing Database");
+    }catch(err){
+        console.error(err);
+        res.send("Error " + err);
+    }
+    
+    console.log("Initializing Database");
         await client.query(`CREATE TABLE IF NOT EXISTS posts(
         id SERIAL PRIMARY KEY,
         url VARCHAR(10000) UNIQUE NOT NULL,
@@ -54,18 +59,14 @@ async function main(){
         id SERIAL PRIMARY KEY,
         url VARCHAR(10000) REFERENCES posts(url)
     );`);
-    }catch(err){
-        console.error(err);
-        res.send("Error " + err);
-    }
     
-    
-
+    console.log('test1...');
     let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
     const html = respone.body;
     const $ = cheerio.load(html);
     // console.log($("tbody[id^='normalthread']").length);
     const lastPageHref = $("div.pg > a.last").attr('href');
+    console.log('test2...');
     response = await gotInstance.get(lastPageHref);
     const regex = /(forum-103-)(\d*).html/;
     const match = lastPageHref.match(regex);
