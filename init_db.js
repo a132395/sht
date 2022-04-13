@@ -64,7 +64,9 @@ async function main(){
     
     console.log('test1...');
     let respone =  gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
+    console.log('test2...');
     console.log(respone);
+    console.log('test3...');
     const html = respone.body;
     console.log(html);
     const $ = cheerio.load(html);
