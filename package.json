@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "agentkeepalive": "dependencies",
+    "agentkeepalive": "latest",
     "bluebird": "latest",
     "cheerio": "latest",
     "express": "latest",
