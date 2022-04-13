@@ -38,12 +38,12 @@ const client = new Client({
 
 async function main(){
     // Init db, 
-    try{
+//     try{
         client.connect();
-    }catch(err){
-        console.error(err);
-        res.send("Error " + err);
-    }
+//     }catch(err){
+//         console.error(err);
+//         res.send("Error " + err);
+//     }
     
     console.log("Initializing Database");
         await client.query(`CREATE TABLE IF NOT EXISTS posts(
