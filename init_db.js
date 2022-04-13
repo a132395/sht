@@ -64,7 +64,7 @@ async function main(){
     
     console.log('test1...');
 //     let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
-    let respone = await gotInstance.get('forum-103-1.html');
+    let respone = gotInstance.get('forum-103-1.html');
     const html = respone.body;
     const $ = cheerio.load(html);
     // console.log($("tbody[id^='normalthread']").length);
