@@ -17,7 +17,7 @@
     "got": "^11.1.2",
     "http-proxy": "^1.18.0",
     "human-interval": "^1.0.0",
-    "pg": "latest",
+    "pg": "^8.1.0",
     "request": "^2.88.2",
     "tough-cookie": "^4.0.0"
   },
@@ -25,6 +25,6 @@
 		"start": "node index.js"
 	},
   "engines": {
-    "node": "13.x"
+    "node": "14.x"
   }
 }
