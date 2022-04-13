@@ -64,9 +64,9 @@ async function main(){
     
     console.log('test1...');
     let respone =  gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
-    console.log('test3...');
+    console.log(respone);
     const html = respone.body;
-    console.log('test4...');
+    console.log(html);
     const $ = cheerio.load(html);
     console.log('test5...');
     // console.log($("tbody[id^='normalthread']").length);
