@@ -15,7 +15,7 @@
     "cheerio": "latest",
     "express": "latest",
     "got": "latest",
-    "http-proxy": "latest,
+    "http-proxy": "latest",
     "human-interval": "latest",
     "pg": "latest",
     "request": "latest",
