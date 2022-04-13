@@ -43,8 +43,8 @@ async function main(){
     }catch(err){
         console.error(err);
     }
-    async  console.log("Initializing Database");
-    client.query(`CREATE TABLE IF NOT EXISTS posts(
+    console.log("Initializing Database");
+    await client.query(`CREATE TABLE IF NOT EXISTS posts(
         id SERIAL PRIMARY KEY,
         url VARCHAR(10000) UNIQUE NOT NULL,
         title VARCHAR(10000) NOT NULL,
@@ -53,7 +53,7 @@ async function main(){
         downloaded BOOLEAN
     )`);
 
-    async  client.query(`CREATE TABLE IF NOT EXISTS downloading(
+    await client.query(`CREATE TABLE IF NOT EXISTS downloading(
         id SERIAL PRIMARY KEY,
         url VARCHAR(10000) REFERENCES posts(url)
     );`);
