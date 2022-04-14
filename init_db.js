@@ -79,9 +79,6 @@ async function main(){
     const match = lastPageHref.match(regex);
     const forumPrefix = match[1];
     const maxPageNumber = parseInt(match[2]);
-    }catch(err){
-            console.log(err);
-        }
     console.log('Checking new posts...');
     const query_text = `INSERT INTO posts (url,title,postdate,downloaded)
     VALUES
@@ -89,6 +86,9 @@ async function main(){
     ON CONFLICT 
     DO NOTHING;`;
     // let visted = false;
+        }catch(err){
+            console.log(err);
+        }
     for (let i = 1 ; i<= 2 ; i++){
         //
         
@@ -126,13 +126,13 @@ async function main(){
     magnet IS NULL
     AND
     downloaded = false;`);
-
     const postsWithoutMagnet = res.rows;
 
     const update_query_text = `UPDATE posts
     SET magnet = $1
     WHERE url = $2;`;
     async function parseMagnet(postDoc){
+        try{
         const url = postDoc['url'];
         respone = await gotInstance.get(url);
         const html = respone.body;
@@ -141,6 +141,9 @@ async function main(){
         const magnet = $('div.blockcode > div > ol > li').text();
         if (magnet.includes('magnet')){
             await client.query(update_query_text,[magnet,url]);
+        }
+            }catch(err){
+            console.log(err);
         }
     }
 
