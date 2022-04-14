@@ -66,6 +66,7 @@ async function main(){
     console.log('now2...');
     
     console.log('test1...');
+    try {
     let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
 //     let respone = gotInstance.get('forum-103-1.html');
     const html = respone.body;
@@ -78,7 +79,9 @@ async function main(){
     const match = lastPageHref.match(regex);
     const forumPrefix = match[1];
     const maxPageNumber = parseInt(match[2]);
-
+    }catch(err){
+            console.log(err);
+        }
     console.log('Checking new posts...');
     const query_text = `INSERT INTO posts (url,title,postdate,downloaded)
     VALUES
